@@ -71,16 +71,12 @@ async function predict() {
         labelContainer.childNodes[i].innerHTML = classPrediction;
 
         if(prediction[i].probability > prediction[maxProbClass].probability) maxProbClass = i;
-        da.dan.push("DummySensor-I", maxProbClass);
     }
+    da.dan.push("DummySensor-I", maxProbClass);
     console.log(maxProbClass);
 
     // finally draw the poses
     drawPose(pose);
-}
-
-function getClass() {
-    return maxProbClass;
 }
 
 function drawPose(pose) {
